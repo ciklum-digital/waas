@@ -1,5 +1,7 @@
+const jestConfig = require('./jest.config');
+
 module.exports = {
-  ...require('./jest.config'),
+  ...jestConfig,
   coverageReporters: [
     'text',
     'text-summary',

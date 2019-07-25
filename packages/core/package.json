@@ -5,8 +5,8 @@
   "author": "Aleksey Grinevich <aleksay@gmail.com>",
   "homepage": "",
   "license": "MIT",
-  "main": "dist/public-api.js",
-  "typings": "dist/public-api.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "directories": {
     "dist": "dist"
   },

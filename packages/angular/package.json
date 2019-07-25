@@ -5,8 +5,8 @@
   "author": "Aleksey Grinevich <aleksay@gmail.com>",
   "homepage": "",
   "license": "MIT",
-  "main": "dist/public-api.js",
-  "typings": "dist/public-api.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "directories": {
     "dist": "dist"
   },
@@ -32,10 +32,10 @@
     "@angular/common": "^8.1.1",
     "@angular/compiler": "^8.1.1",
     "@angular/core": "^8.1.1",
-    "@waas/core": "^0.0.0"
-  },
-  "dependencies": {
     "@angular/platform-browser": "^8.1.2",
-    "@angular/platform-browser-dynamic": "^8.1.2"
+    "@angular/platform-browser-dynamic": "^8.1.2",
+    "@waas/core": "^0.0.0",
+    "jest-preset-angular": "^7.1.1",
+    "zone.js": "0.8.26"
   }
 }
