@@ -1,0 +1,54 @@
+{
+  "name": "waas",
+  "description": "Module skeleton | Start your module here",
+  "version": "0.0.0",
+  "author": "Ciklum Digital / JS Team",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "homepage": "https://github.com/ciklum-digital/waas#readme",
+  "main": "lerna.json",
+  "scripts": {
+    "commit": "npx git-cz",
+    "lint": "npx tslint packages/**/*.ts --project ./tsconfig.json",
+    "lint:fix": "yarn lint --fix",
+    "test": "npx jest",
+    "build": "npx lerna run build",
+    "ci:lint": "yarn lint",
+    "ci:test": "yarn test --config=jest.ci.config.js | npx coveralls",
+    "ci:sonar": "npx sonar-scanner",
+    "ci:build": "yarn build",
+    "ci:publish": "npx lerna publish"
+  },
+  "dependencies": {
+    "typescript": "3.5.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.0.0",
+    "@commitlint/config-conventional": "8.0.0",
+    "@types/jest": "24.0.13",
+    "commitizen": "3.1.1",
+    "coveralls": "3.0.4",
+    "husky": "2.4.0",
+    "jest": "24.8.0",
+    "lerna": "3.14.1",
+    "lerna-changelog": "0.8.2",
+    "npx": "10.2.0",
+    "sonar-scanner": "3.1.0",
+    "ts-jest": "24.0.2",
+    "tslint": "5.16.0",
+    "tslint-config-airbnb": "5.11.1",
+    "tslint-origin-ordered-imports-rule": "1.2.2",
+    "tslint-sonarts": "1.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/ciklum-digital/waas/issues"
+  }
+}

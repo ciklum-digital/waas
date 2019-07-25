@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "tslint-sonarts",
+    "tslint-config-airbnb"
+  ],
+  "rulesDirectory": [
+    "node_modules/tslint-origin-ordered-imports-rule/dist"
+  ],
+  "rules": {
+    "no-use-before-declare": false,
+    "origin-ordered-imports": [true, "one-blank-line"],
+    "newline-before-return": true,
+    "space-before-function-paren": [true, "never"],
+    "lines-between-class-members": ["error", "always", {
+      "exceptAfterSingleLine": true
+    }],
+    "max-line-length": [true, 120],
+    "ter-max-len": [true, 120],
+    "max-lines": ["error", {
+      "max": 180,
+      "skipBlankLines": false,
+      "skipComments": false
+    }]
+  },
+  "linterOptions": {
+    "exclude": [
+      "**/node_modules/**",
+      "**/dist/**"
+    ]
+  }
+}

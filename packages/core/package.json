@@ -1,0 +1,29 @@
+{
+  "name": "@waas/core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Aleksey Grinevich <aleksay@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/public-api.js",
+  "typings": "dist/public-api.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rm -r -f ./dist",
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
+  "gitHead": "#",
+  "dependencies": {
+    "rxjs": "^6.5.2"
+  }
+}
