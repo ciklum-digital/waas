@@ -1,8 +1,10 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule,
   platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { IRequestConfigExecute, RequestEventEnum } from '@waas/core';
 
 import { HttpTransportAdapterService } from './http-transport-adapter.service';
