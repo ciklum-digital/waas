@@ -1,6 +1,6 @@
 {
   "name": "waas",
-  "description": "Module skeleton | Start your module here",
+  "description": "waas - lightweight JS/Angular 6+ library that organizes your APIs. ",
   "version": "0.0.0",
   "author": "Ciklum Digital / JS Team",
   "license": "MIT",

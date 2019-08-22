@@ -4,7 +4,7 @@ The following is a set of guidelines for contributing to Ciklum digital organisa
 
 ## Code of Conduct
 
-We have adopted a [Code of Conduct](https://github.com/ciklum-digital/module-skeleton/blob/master/CODE_OF_CONDUCT.md) that we expect project participants to adhere to. Please read the full text so that you can understand what actions will and will not be tolerated.
+We have adopted a [Code of Conduct](https://github.com/ciklum-digital/waas/blob/master/CODE_OF_CONDUCT.md) that we expect project participants to adhere to. Please read the full text so that you can understand what actions will and will not be tolerated.
 
 ## Open Development
 
@@ -19,7 +19,7 @@ There are three types of branch we maintain: `master` `issue/*` `feat/*`.
 
 ## Reporting bugs and questions
 
-We are using [GitHub Issues](https://github.com/ciklum-digital/module-skeleton/issues) for bug tracing. Please, use [template](https://github.com/ciklum-digital/module-skeleton/tree/master/.github/ISSUE_TEMPLATE) for issue/feature creating.
+We are using [GitHub Issues](https://github.com/ciklum-digital/waas/issues) for bug tracing. Please, use [template](https://github.com/ciklum-digital/waas/tree/master/.github/ISSUE_TEMPLATE) for issue/feature creating.
 
 Before you reporting a bug, please make sure you've searched exists issues.
 
@@ -30,7 +30,7 @@ The core team is monitoring for pull requests. We will review your pull request 
 **Before submitting a pull request**, please make sure the following is done:
 
 1. Before you reporting a bug, please make sure you've searched exists issues.
-1. Open a new issue in the [issues tracker](https://github.com/ciklum-digital/module-skeleton/issues)
+1. Open a new issue in the [issues tracker](https://github.com/ciklum-digital/waas/issues)
 1. Fork the repository and create your branch from [proper branch](#Branch-Organization).
 1. Run `yarn install` in the repository root.
 1. If you've fixed a bug or added code that should be tested, add tests!
@@ -38,7 +38,7 @@ The core team is monitoring for pull requests. We will review your pull request 
 1. Ensure the code lints passes. Run `yarn lint` for check it.
 1. We are using commitizen and commit lint. Use `yarn commit` for prompting commit message window.
 1. Submit a pull request, referencing any issues it addresses.
-1. For PR creation use [template]([template](https://github.com/ciklum-digital/module-skeleton/tree/master/.github/PULL_REQUEST_TEMPLATE.md))
+1. For PR creation use [template]([template](https://github.com/ciklum-digital/waas/tree/master/.github/PULL_REQUEST_TEMPLATE.md))
 
 ## Development Workflow
 
