@@ -55,8 +55,8 @@ describe('HttpTransportAdapterService', () => {
         expect(response).toEqual({data: 'some data'});
         done();
       });
-    const req = http.expectOne('api/testing?id=15');
     req.flush({data: 'some data'}, {statusText, status});
+    const req = http.expectOne('api/testing?id=15');
   });
 
   it('should cancel request', () => {

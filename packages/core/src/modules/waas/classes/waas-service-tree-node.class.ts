@@ -19,7 +19,7 @@ export class WaasServiceTreeNode extends WaasEventEmitter {
   }
 
   static isVariable(path: string): boolean {
-    return (path || '').length === 0 ? false : path[0] === ':';
+    return (path || '').indexOf(':') === 0;
   }
 
   static parsePath(path: string): PathElement[] {
