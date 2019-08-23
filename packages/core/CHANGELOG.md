@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2019-08-23)
+
+
+### Features
+
+* basic functionality for angular ([5f5089c](https://github.com/ciklum-digital/waas/commit/5f5089c))
+* update jest configuration ([098ea5a](https://github.com/ciklum-digital/waas/commit/098ea5a))
+
+
+
+
+
 ## [0.1.2](https://github.com/ciklum-digital/module-skeleton/compare/v0.1.1...v0.1.2) (2019-06-26)
 
 **Note:** Version bump only for package package-name

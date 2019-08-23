@@ -1,6 +1,6 @@
 {
   "name": "@waas/angular",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "> TODO: description",
   "author": "Aleksey Grinevich <aleksay@gmail.com>",
   "homepage": "",
@@ -34,7 +34,7 @@
     "@angular/core": "^8.1.1",
     "@angular/platform-browser": "^8.1.2",
     "@angular/platform-browser-dynamic": "^8.1.2",
-    "@waas/core": "^0.0.0",
+    "@waas/core": "^0.2.0",
     "jest-preset-angular": "^7.1.1",
     "zone.js": "0.8.26"
   }
