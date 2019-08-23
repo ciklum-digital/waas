@@ -1,33 +1,149 @@
-# [package-name] - getting started
+# WAAS
 
-[there the place for SHORT OVERVIEW dateils..]
+**W**eb **A**pp **A**pi **S**ervice (WAAS) - lightweight JS/Angular 6+ library that organizes your APIs.
+## Table of contents
+1. [Installation and usage](#installation-and-usage)
+2. [Api Service](#api-service)
+    * [Http Adapter](#http-adapter)
+    * [Mock Plugin](#mock-plugin)
+    * [Api Service configuration](#api-service-configuration)
+3. [Hooks](#hooks)
+    * [Hooks types](#hooks-types)
+4. [Events](#events)
+    * [Event types](#event-types)
 
-[please fill it for your module]
+## Installation and usage
+Set private registry by adding ```//registry.npmjs.org/:_authToken=7e1daf59-1424-4261-a14b-ab23f404c1db``` to your `.npmrc` file
 
+Install WAAS library by running
 
-## Overview
+```npm i -S @ciklum/ng-waas```
 
-[there the place for OVERVIEW dateils..]
+Then add `WaasModule` to imports of your module and register services
 
-[please fill it for your module]
+For the main application:
+```typescript 
+import { NgModule } from '@angular/core';
+import { HttpTransportAdapterService, IWaasConfiguration, WaasModule } from '@ciklum/ng-waas';
 
+const waasConfig: IWaasConfiguration = {
+  basePath: 'https://reqres.in/api'
+};
 
-## Usage
+@NgModule({
+  imports: [
+     WaasModule.forRoot( waasConfig, [HttpClient], HttpTransportAdapterService]),
+  ]
+})
+export class MyModule {
+}
+``` 
 
-[there the place for USAGE dateils..]
+For the module of application:
+```typescript 
+import { NgModule } from '@angular/core';
+import { IServiceRegistration, WaasModule } from '@ciklum/ng-waas';
 
-[please fill it for your module]
+export const searchServices: IServiceRegistration[] = [
+  {
+    path: '/test',
+    alias: 'search'
+  }
+];
 
+@NgModule({
+  imports: [WaasModule.forFeature(searchServices)]
+})
+export class MyModule { }
+``` 
 
-## API
+## Api Service
+`WaasService` class allows you to move the most of your payload outside your main code and care only
+about business logic.
 
-[there the place for API dateils..]
+```
+...
+constructor(private readonly waas: NgWaasService) {
+  this.userService = waas.service('users');
+}
+...
+```
+or
 
-[please fill it for your module]   
+````
+@Waas('test') testService: IWaasChildService;
+````
 
+### Http Adapter
+Adapter tells Api Service how to work with some API.
+Adapter should implement `ITransportAdapter` interface.
+The default adapter provided by class ``HttpTransportAdapterService``, which uses native angular ``HttpClient`` under the hood.
 
-## Examples
+### Mock Plugin
+`NgWaasMockService` add a possibility to returns a mocked response if it was provided or makes http request if wasn't.
 
-[there the place for EXAMPLES dateils..]    
+```
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    WaasModule.forRoot( waasConfig, [HttpClient], HttpTransportAdapterService, [NgWaasMockService]),
+    WaasMockModule.forRoot([MockItem])
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
 
-[please fill it for your module]   
+....
+const ITEMS_MOCK = [
+  {title: 'Item 1', description: 'item 1 description'},
+  {title: 'Item 2', description: 'item 2 description'},
+];
+
+@mockApiClass
+export class MockItem {
+  @mockApiData({path: '/test', method: 'get'})
+  getData(data: IMockRequest): any {
+    return ITEMS_MOCK;
+  }
+}
+
+```
+
+* `@mockApiClass` - mark current class as mock class
+* `@mockApiData({path: ..., method: ...})` - use this method as mock data for defined path and method
+
+### Api Service configuration
+```
+export interface IWaasConfiguration {
+  basePath: string; // Base path
+  hooks?: IWaasHooks; //Hooks for service
+}
+```
+
+## Hooks
+
+## Hooks types
+```
+export interface IWaasHooks {
+  before?: ((config: IRequestConfigExecute) => IRequestConfigExecute)[]
+    | ((data: IRequestConfigExecute) => IRequestConfigExecute); // Before request send
+  after?: ((config: any) => any)[] | ((config: any) => any); //After recieved response
+}
+```
+
+## Events
+
+### Event types
+WAAS provides custom events:  
+```typescript
+export enum RequestEventEnum {
+  request = 'request', // before send request
+  success = 'success', // response status is 2xx
+  error = 'error', // response status is 4xx
+  failure = 'failure', // all other response status
+  cancel = 'cancel' // request is canceled
+}
+```
