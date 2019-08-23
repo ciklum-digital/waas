@@ -1,0 +1,41 @@
+{
+  "name": "@waas/angular",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Aleksey Grinevich <aleksay@gmail.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rm -r -f ./dist",
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
+  "gitHead": "#",
+  "peerDependencies": {
+    "@angular/common": "^8.1.1",
+    "@angular/core": "^8.1.1",
+    "@waas/core": "^0.0.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^8.1.1",
+    "@angular/compiler": "^8.1.1",
+    "@angular/core": "^8.1.1",
+    "@angular/platform-browser": "^8.1.2",
+    "@angular/platform-browser-dynamic": "^8.1.2",
+    "@waas/core": "^0.0.0",
+    "jest-preset-angular": "^7.1.1",
+    "zone.js": "0.8.26"
+  }
+}
