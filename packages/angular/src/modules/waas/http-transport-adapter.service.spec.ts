@@ -44,8 +44,6 @@ describe('HttpTransportAdapterService', () => {
     const url = 'api/testing';
     const headers = {Authorization: 'Basic'};
     const params = {id: '15'};
-    const status = 200;
-    const statusText = 'Ok';
 
     const data = {
       method: 'GET', headers, params, url, before: (data1: IRequestConfigExecute) => data1, after: (data1) => data1
@@ -55,8 +53,8 @@ describe('HttpTransportAdapterService', () => {
         expect(response).toEqual({data: 'some data'});
         done();
       });
-    const req = http.expectOne('api/testing?id=15');
-    req.flush({data: 'some data'}, {statusText, status});
+    const req = http.expectOne(`${url}?id=${params.id}`);
+    req.flush({data: 'some data'}, {statusText, 'ok', status: 200});
   });
 
   it('should cancel request', () => {
