@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WAAS | lightweight JS/Angular 6+ library that organizes your APIs.</title>
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Lightweight HTTP client | Rich configuration set up | Rich API">
+  <meta name="keywords" content="waas, api, http, angular, ng, github, travis, lerna">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="og:url" content="https://github.com/ciklum-digital/wass/">
+  <meta name="og:locale" content="en_US">
+  <meta name="og:type" content="website">
+  <meta name="og:title" content="WAAS | lightweight JS/Angular 6+ library that organizes your APIs">
+  <meta name="og:description" content="Lightweight HTTP client | Rich configuration set up | Rich API">
+  <meta name="og:image" content="https://ciklum-digital.github.io/waas/assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<div id="app"></div>
+<script>
+  var docsBaseUrl = 'https://raw.githubusercontent.com/ciklum-digital/waas/master';
+
+  window.$docsify = {
+    homepage: 'getting_started.md',
+    repo: 'https://github.com/ciklum-digital/waas',
+    loadSidebar: true,
+    coverpage: true,
+    onlyCover: true,
+    auto2top: true,
+    autoHeader: false,
+    subMaxLevel: 2,
+    maxLevel: 4,
+    alias: {
+      '/.*/_sidebar.md': '/_sidebar.md',
+      '.*?/angular/getting_started': docsBaseUrl + '/packages/angular/README.md',
+      '.*?/core/getting_started': docsBaseUrl + '/packages/core/README.md',
+      '.*?/CODE_OF_CONDUCT': docsBaseUrl + '/CODE_OF_CONDUCT.md',
+      '.*?/CONTRIBUTING': docsBaseUrl + '/CONTRIBUTING.md',
+      '.*?/CHANGELOG': docsBaseUrl + '/CHANGELOG.md',
+    },
+    search: {
+      paths: 'auto',
+      placeholder: 'Search',
+      noData: 'No Results.'
+    },
+    ga: 'UA-142788701-1',
+  }
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+<script src="//unpkg.com/docsify-copy-code@2"></script>
+<script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+</body>
+</html>

@@ -1,23 +1,12 @@
-# WAAS
-
+# Getting started
+ 
 **W**eb **A**pp **A**pi **S**ervice (WAAS) - lightweight JS/Angular 6+ library that organizes your APIs.
-## Table of contents
-1. [Installation and usage](#installation-and-usage)
-2. [Api Service](#api-service)
-    * [Http Adapter](#http-adapter)
-    * [Mock Plugin](#mock-plugin)
-    * [Api Service configuration](#api-service-configuration)
-3. [Hooks](#hooks)
-    * [Hooks types](#hooks-types)
-4. [Events](#events)
-    * [Event types](#event-types)
 
-## Installation and usage
-Set private registry by adding ```//registry.npmjs.org/:_authToken=7e1daf59-1424-4261-a14b-ab23f404c1db``` to your `.npmrc` file
+## Usage
 
 Install WAAS library by running
 
-```npm i -S @ciklum/ng-waas```
+```npm i -S @ciklum-digital/waas```
 
 Then add `WaasModule` to imports of your module and register services
 
@@ -57,7 +46,10 @@ export const searchServices: IServiceRegistration[] = [
 export class MyModule { }
 ``` 
 
-## Api Service
+
+## API
+
+### Api Service
 `WaasService` class allows you to move the most of your payload outside your main code and care only
 about business logic.
 
@@ -74,12 +66,12 @@ or
 @Waas('test') testService: IWaasChildService;
 ````
 
-### Http Adapter
+#### Http Adapter
 Adapter tells Api Service how to work with some API.
 Adapter should implement `ITransportAdapter` interface.
 The default adapter provided by class ``HttpTransportAdapterService``, which uses native angular ``HttpClient`` under the hood.
 
-### Mock Plugin
+#### Mock Plugin
 `NgWaasMockService` add a possibility to returns a mocked response if it was provided or makes http request if wasn't.
 
 ```
@@ -115,17 +107,18 @@ export class MockItem {
 * `@mockApiClass` - mark current class as mock class
 * `@mockApiData({path: ..., method: ...})` - use this method as mock data for defined path and method
 
-### Api Service configuration
+#### Api Service configuration
 ```
 export interface IWaasConfiguration {
   basePath: string; // Base path
   hooks?: IWaasHooks; //Hooks for service
-}
+} 
 ```
 
-## Hooks
 
-## Hooks types
+### Hooks
+
+#### Hooks types
 ```
 export interface IWaasHooks {
   before?: ((config: IRequestConfigExecute) => IRequestConfigExecute)[]
@@ -134,9 +127,9 @@ export interface IWaasHooks {
 }
 ```
 
-## Events
+### Events
 
-### Event types
+#### Event types
 WAAS provides custom events:  
 ```typescript
 export enum RequestEventEnum {
